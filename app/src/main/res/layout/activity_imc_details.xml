@@ -76,8 +76,8 @@
 
     <Button
         android:id="@+id/buttonCerrarDetails"
-        android:layout_width="139dp"
-        android:layout_height="57dp"
+        android:layout_width="153dp"
+        android:layout_height="73dp"
         android:layout_marginBottom="33dp"
         android:text="Cerrar"
         android:textSize="20sp"

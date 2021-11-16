@@ -18,17 +18,16 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText estaturaText;
     private EditText pesoText;
-    private Intent irA;
     private static Double imc;
     private ArrayList<IndiceMasaMuscular> listaReg;
-    SimpleDateFormat dateFormat = new SimpleDateFormat("EEE, d MMM yyyy HH:mm:ss a", Locale.US);
+    SimpleDateFormat dateFormat = new SimpleDateFormat("EEE, d MMM yyyy KK:mm:ss a", Locale.US);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        listaReg = new ArrayList<>(); //crea lista donde se anadiran los registros
+        listaReg = new ArrayList<>(); //crea lista donde se añadiran los registros
         estaturaText = (EditText) findViewById(R.id.editTextNumber);
         pesoText = (EditText) findViewById(R.id.editTextNumber2);
 
@@ -38,8 +37,9 @@ public class MainActivity extends AppCompatActivity {
         botonCalcular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               Intent ir = irA();
-               startActivity(ir);
+                imcCalcular();
+               Intent intentResultado = new Intent(MainActivity.this, ResultadoImc.class);
+               startActivity(intentResultado);
                estaturaText.setText(""); //limpia el campo estatura
                pesoText.setText(""); //limpia el campo peso
                estaturaText.requestFocus(); //posiciona focus del cursor en campo estatura
@@ -57,7 +57,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private Intent irA(){
+    //metodo calcula IMC y añade los datos a la lista de registro
+    private void imcCalcular(){
         DecimalFormat decimalFormat = new DecimalFormat("#.#");
         Double peso=0.0;
         Double estatura=0.0;
@@ -73,19 +74,7 @@ public class MainActivity extends AppCompatActivity {
         //} catch (ParseException e) {
          //   e.printStackTrace();
         //}
-
         listaReg.add(new IndiceMasaMuscular(estatura, peso, imc , fecha)); //añade registro nuevo a lista
-
-        if(imc<18.5)
-            irA = new Intent(MainActivity.this, BajoPeso_IMC.class);
-        else if(imc>=18.5 && imc<=24.9)
-            irA = new Intent(MainActivity.this, Normal_IMC.class);
-        else if(imc>=25.0 && imc<=29.9)
-            irA = new Intent(MainActivity.this, Sobrepeso_IMC.class);
-        else if(imc>30.0)
-            irA = new Intent(MainActivity.this, Obesidad_IMC.class);
-
-        return irA;
     }
 
     public static Double getImc() {

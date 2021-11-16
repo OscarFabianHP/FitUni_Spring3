@@ -10,22 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FitUni">
         <activity
+            android:name=".ResultadoImc"
+            android:exported="false" />
+        <activity
             android:name=".ImcDetails"
             android:exported="false" />
         <activity
             android:name=".RegistroActivity"
-            android:exported="false" />
-        <activity
-            android:name=".BajoPeso_IMC"
-            android:exported="false" />
-        <activity
-            android:name=".Sobrepeso_IMC"
-            android:exported="false" />
-        <activity
-            android:name=".Obesidad_IMC"
-            android:exported="false" />
-        <activity
-            android:name=".Normal_IMC"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

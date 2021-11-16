@@ -11,6 +11,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+//Clase parceable para pasar datos facilmente entre distintas activitys
 public class IndiceMasaMuscular implements Parcelable {
     private Double estatura;
     private Double peso;

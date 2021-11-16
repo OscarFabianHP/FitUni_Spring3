@@ -17,7 +17,7 @@ public class RegistroActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro);
 
-        ArrayList<IndiceMasaMuscular> list = getIntent().getParcelableArrayListExtra("datosLista");
+        ArrayList<IndiceMasaMuscular> list = getIntent().getParcelableArrayListExtra("datosLista"); //obtiene lista de registro desde MainActivity
         ImcAdapter adapter = new ImcAdapter(this, R.layout.item_layout, list);
         ListView listView = (ListView)findViewById(R.id.listaReg);
         listView.setAdapter(adapter);
