@@ -28,7 +28,7 @@ public class RegistroActivity extends AppCompatActivity {
                 IndiceMasaMuscular regItem = list.get(position); //obtendo elemento que corrsponde al item clickeado;
                 Intent intent = new Intent(RegistroActivity.this, ImcDetails.class );
                 intent.putExtra("regItem", regItem);
-                intent.putExtras(savedInstanceState);
+                //intent.putExtras(savedInstanceState);
                 startActivity(intent);
             }
         });

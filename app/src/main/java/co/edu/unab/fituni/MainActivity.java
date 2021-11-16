@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                Intent intent = new Intent(MainActivity.this, RegistroActivity.class);
                intent.putParcelableArrayListExtra("datosLista", listaReg);
-               intent.putExtras(savedInstanceState);
+               //intent.putExtras(savedInstanceState);
                startActivity(intent);
             }
         });
