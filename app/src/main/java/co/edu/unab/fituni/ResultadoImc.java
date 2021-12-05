@@ -60,7 +60,7 @@ public class ResultadoImc extends AppCompatActivity {
             text.setText(String.format("IMC: %.1f tienes Sobrepeso%nInfo: IMC 25.0 – 29.9 Sobrepeso", imc ));
             image.setImageResource(SOBREPESO_DRAWABLE[imgSobrep]); //establece la imagen imc sobrepeso
         }
-        else if(imc>30.0) {
+        else if(imc>=30.0) {
             int imgObeso = random.nextInt(4); //elige numero aleatorio de 0 a 4
             text.setText(String.format("IMC: %.1f tienes Obesidad%nInfo: IMC 30.0 o más Obesidad", imc ));
             image.setImageResource(OBESO_DRAWABLE[imgObeso]); //establece la imagen imc Obesidad

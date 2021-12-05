@@ -22,6 +22,7 @@ public class ImcDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_imc_details);
 
+        //obtiene Extra "regItem" enviado en Intent desde RegistroActivity.java
         IndiceMasaMuscular registro = getIntent().getParcelableExtra("regItem");
 
         txtFecha = (TextView) findViewById(R.id.textFechaDetail);
@@ -45,7 +46,7 @@ public class ImcDetails extends AppCompatActivity {
             imagen.setImageResource(R.drawable.normalicon2);
         else if(imc>=25.0 && imc<=29.9)
             imagen.setImageResource(R.drawable.sobrepesoicon);
-        else if(imc>30.0)
+        else if(imc>=30.0)
             imagen.setImageResource(R.drawable.gordoicon);
 
         txtFecha.setText(String.format("FECHA:%n%s", registro.getFecha()));

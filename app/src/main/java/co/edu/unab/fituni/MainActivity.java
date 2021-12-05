@@ -67,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
         estatura = Double.parseDouble(estaturaText.getText().toString().trim())/100;
         peso = Double.parseDouble(pesoText.getText().toString().trim());
         imc = peso/(Math.pow(estatura, 2));
+        imc = Math.round(imc*10.0)/10.0; //redondea a un solo decimal
         //String imcFormated = decimalFormat.format(imc)  ;
         //Double imcD = Double.parseDouble(imcFormated);
         //try {
